@@ -6,6 +6,8 @@ import { Grid } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { GridOptions, SwiperOptions } from 'swiper/types'
 
+import { cn } from '@/utilities/ui'
+
 import 'swiper/css'
 import 'swiper/css/grid'
 
@@ -17,6 +19,7 @@ type Props = {
     url: string
     alt?: string
   }
+  imageClassName?: string
   features?: {
     title: string
     description: string
@@ -54,10 +57,11 @@ export const AboutSectionComponent = ({
   heading,
   description,
   image,
+  imageClassName,
   features,
 }: Props) => {
   return (
-    <section className="relative bg-[#e4763d] text-white">
+    <section className="relative bg-[#e4763d] text-white min-h-[500px] flex items-center">
       <Image
         src="/images/icons/2sqare-outline-bg.png"
         alt=""
@@ -95,7 +99,10 @@ export const AboutSectionComponent = ({
               alt={image?.alt || ''}
               width={1200}
               height={800}
-              className="w-[20rem] md:w-[36rem] 2xl:w-[42rem] absolute right-0 bottom-0"
+              className={cn(
+                'w-[20rem] md:w-[36rem] 2xl:w-[42rem] absolute right-0 bottom-0',
+                imageClassName,
+              )}
             />
           </div>
         </div>

@@ -30,6 +30,14 @@ export const AboutSection: Block = {
       required: true,
     },
     {
+      name: 'imageClassName',
+      type: 'text',
+      label: 'Image CSS Classes',
+      admin: {
+        description: 'Optional Tailwind/CSS classes added to the selected image.',
+      },
+    },
+    {
       name: 'features',
       type: 'array',
       fields: [

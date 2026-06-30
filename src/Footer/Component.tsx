@@ -92,7 +92,7 @@ export async function Footer() {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Image src="images/envelop.svg" alt="Email" width={40} height={40} />
+                  <Image src="/images/envelop.svg" alt="Email" width={40} height={40} />
                   <a
                     href="mailto:info@800-simplify.com"
                     className="text-sm hover:text-[#652D8E] text-[#525252]"
@@ -102,7 +102,7 @@ export async function Footer() {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <Image src="images/call.svg" alt="Phone" width={40} height={40} />
+                  <Image src="/images/call.svg" alt="Phone" width={40} height={40} />
                   <a href="tel:80074675439" className="text-sm hover:text-[#652D8E] text-[#525252]">
                     800-SIMPLIFY
                   </a>

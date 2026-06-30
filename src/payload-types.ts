@@ -201,7 +201,7 @@ export interface Page {
       | null;
     media?: (string | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | ServiceHightlightBlock)[];
   meta?: {
     title?: string | null;
     /**
@@ -783,6 +783,17 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ServiceHightlightBlock".
+ */
+export interface ServiceHightlightBlock {
+  title: string;
+  para: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'serviceHightlight';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1089,6 +1100,7 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        serviceHightlight?: T | ServiceHightlightBlockSelect<T>;
       };
   meta?:
     | T
@@ -1185,6 +1197,16 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ServiceHightlightBlock_select".
+ */
+export interface ServiceHightlightBlockSelect<T extends boolean = true> {
+  title?: T;
+  para?: T;
   id?: T;
   blockName?: T;
 }

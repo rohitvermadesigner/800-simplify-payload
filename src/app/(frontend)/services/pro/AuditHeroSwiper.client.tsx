@@ -10,22 +10,25 @@ import 'swiper/css/pagination'
 
 const slides = [
   {
-    src: '/images/audit/slide-1.png',
+    src: '/images/pro/slide-1.png',
     alt: 'Audit & Assurance',
-    title: 'Qualified Annual',
-    titleSecondLine: 'Audit Report',
+    title: 'Visa',
+    titleSecondLine: 'Application',
+    price: 'AED 299',
   },
   {
-    src: '/images/audit/slide-2.png',
+    src: '/images/pro/slide-2.png',
     alt: 'Audit & Assurance',
-    title: 'Sales',
-    titleSecondLine: 'Audit Report',
+    title: 'License',
+    titleSecondLine: 'Amendment',
+    price: 'AED 499',
   },
   {
-    src: '/images/audit/slide-3.png',
+    src: '/images/pro/slide-3.png',
     alt: 'Audit & Assurance',
-    title: 'Audit',
-    titleSecondLine: 'Review Report',
+    title: 'Visa',
+    titleSecondLine: 'Cancellation',
+    price: 'AED 299',
   },
 ]
 
@@ -69,7 +72,7 @@ export default function AuditHeroSwiper() {
 
                     <div className="mb-4 md:mb-6 bg-[linear-gradient(90deg,#E4763D,#652D8E03)] rounded-xl py-3 px-12 inline-flex flex-col gap-1 mt-2 md:mt-5">
                       <span className="block text-sm font-bold">Starting from</span>
-                      <span className="text-4xl font-bold">AED 500</span>
+                      <span className="text-4xl font-bold">{slide.price}</span>
                     </div>
 
                     <div className="flex flex-wrap gap-4 mt-2 md:mt-8">
