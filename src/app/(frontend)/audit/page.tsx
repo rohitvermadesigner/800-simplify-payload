@@ -6,8 +6,8 @@ import { ArrowRight } from 'lucide-react'
 import AuditHeroSwiper from './AuditHeroSwiper.client'
 import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
-import FAQ from '../../components/sections/FAQ'
-import StartBuildScale from '../../components/sections/StartBuildScale'
+import FAQ from '../components/sections/FAQ'
+import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
   title: 'Audit & Assurance Services in UAE | 800-Simplify',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 const auditStack = [
   {
-    title: 'External/Statutory Audit',
+    title: 'External / Statutory Audit',
     description: `An external audit is indicative of how seriously a company treats its financial reporting. Investors look at it
 as a trust factor, so do banks and free zone authorities. Our approved auditors go through the numbers
 to deliver reports that hold up under scrutiny while operations continue running as usual.`,
@@ -35,7 +35,7 @@ business movement and performance to show leadership where attention is needed m
 businesses a clearer view of how its verticals are performing beyond financial reports.`,
   },
   {
-    title: 'Sales/Revenue Audit',
+    title: 'Sales / Revenue Audit',
     description: `As businesses expand, revenue becomes harder to track across systems and billing cycles. That’s often
 where reporting inconsistencies start to appear. Our UAE-approved auditors review revenue records in
 line with IFRS 15 to confirm there is no gap between reported income and actual commercial activity.`,

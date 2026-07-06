@@ -6,8 +6,8 @@ import { ArrowRight } from 'lucide-react'
 import AuditHeroSwiper from './AuditHeroSwiper.client'
 import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
-import FAQ from '../../components/sections/FAQ'
-import StartBuildScale from '../../components/sections/StartBuildScale'
+import FAQ from '../components/sections/FAQ'
+import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
   title: 'Audit & Assurance Services in UAE | 800-Simplify',

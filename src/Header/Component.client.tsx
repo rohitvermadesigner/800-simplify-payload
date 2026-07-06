@@ -96,7 +96,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
             <div className="w-full md:w-1/3 md:w-auto md:px-3">
               <nav
                 id="mainNav"
-                className={` ${isOpen ? 'block' : 'hidden'} flex md:flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-8 items-start md:items-center w-full md:w-auto mt-4 md:mt-0`}
+                className={` ${isOpen ? 'block' : 'hidden'} flex md:flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-8 items-start md:items-center w-full md:w-auto mt-4 md:mt-0 text-[#364153]`}
               >
                 {navItems.map(({ link }, i) => {
                   return <CMSLink key={i} {...link} appearance="link" />

@@ -5,25 +5,29 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    question: 'How will your team support my business?',
-    answer:
-      'We take full ownership of your annual financial audits, monthly accounting & bookkeeping, tax, and PRO needs. Our team makes sure every detail is accurate, secure, and fully documented. What does this mean to you? Complete clarity, stronger decisions.',
+    question: 'When do I need to amend a trade license?',
+    answer: `When there is a change in business activity, structure, or ownership, the UAE trade license
+needs to reflect it. We handle the amendments so there are no gaps between actual operations
+and license records.`,
   },
   {
-    question:
-      "I'm a startup in the DMCC free zone and need audit support. Are you approved to handle this?",
-    answer:
-      'Absolutely. We can take care of your annual DMCC audit requirements with no back-and-forth. 800-Simplify is a registered and approved auditor across DMCC, DIFC, JAFZA, DED, DWC, DAFZA, TECOM, Dubai Media City, SAIF Zone, Dubai Internet City, DSO, Hamriyah Free Zone, D3, and other major UAE free zones. You just need to focus on growing your business and let us manage the books.',
+    question: 'What kind of visa processing do you handle?',
+    answer: `Our visa services in UAE include employment visa processing keeping applications and updates
+moving through the required authorities without delays or process gaps. This helps onboarding
+and workforce movement continue without disruption.`,
   },
   {
-    question: 'How do I know my numbers will be accurate and compliant?',
-    answer:
-      "We don't cut corners. For us, compliance is non-negotiable, so we stick to the UAE tax regulations as well as IAS and IFRS for accounting meticulously. All this keeps your numbers rock-solid, always.",
+    question: 'I’m a small business owner. Do I still need PRO services?',
+    answer: `Yes. Compliance applies at every stage of business. How PRO processes are managed initially
+affects how smoothly operations run as the business scales or expands. We keep
+documentation and authority processes simplified from day one so internal teams are not
+burdened with ongoing admin work.`,
   },
   {
-    question: 'I run a small business. What should I really be paying for an accountant?',
-    answer:
-      "The small business accountant cost depends on your transaction volume, business complexity, and the level of support you need. With 800-Simplify, you don't just pay for CPA accounting services; you get real value. Small businesses deserve expert support without the heavy price tag. That's exactly what we deliver. Our experienced accountants offer structured support at a price that fits your budget and business.",
+    question: 'Do PRO services in the UAE increase business costs?',
+    answer: `PRO processes only become costly when delays and compliance gaps build up, leading to
+penalties and rework. Our PRO support is priced to make commercial sense for startups, SMEs,
+and entrepreneurs managing lean teams.`,
   },
 ]
 
