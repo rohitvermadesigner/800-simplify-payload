@@ -104,7 +104,7 @@ export async function Footer() {
                 <div className="flex items-center gap-2">
                   <Image src="/images/call.svg" alt="Phone" width={40} height={40} />
                   <a href="tel:80074675439" className="text-sm hover:text-[#652D8E] text-[#525252]">
-                    800-SIMPLIFY
+                    800 74675439
                   </a>
                 </div>
               </div>

@@ -61,13 +61,13 @@ export const AboutSectionComponent = ({
   features,
 }: Props) => {
   return (
-    <section className="relative bg-[#e4763d] text-white min-h-[500px] flex items-center">
+    <section className="relative flex min-h-[500px] items-center overflow-hidden bg-[#e4763d] text-white">
       <Image
         src="/images/icons/2sqare-outline-bg.png"
         alt=""
         width={100}
         height={100}
-        className="absolute -top-12 -left-20 w-48"
+        className="pointer-events-none absolute -top-12 -left-20 w-48"
       />
 
       <Image
@@ -75,10 +75,10 @@ export const AboutSectionComponent = ({
         alt=""
         width={100}
         height={100}
-        className="absolute -bottom-24 -left-24 w-48"
+        className="pointer-events-none absolute -bottom-24 -left-24 w-48"
       />
 
-      <div className="max-w-7xl mx-auto py-8 md:py-16 pb-88 md:pb-16">
+      <div className="mx-auto w-full max-w-7xl py-8 pb-88 md:py-16 md:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.8fr] gap-8 items-center px-4">
           <div>
             <span className="uppercase text-xl md:text-2xl font-semibold text-[var(--purple)]">
@@ -100,7 +100,7 @@ export const AboutSectionComponent = ({
               width={1200}
               height={800}
               className={cn(
-                'w-[20rem] md:w-[36rem] 2xl:w-[42rem] absolute right-0 bottom-0',
+                'absolute bottom-0 right-0 w-[min(20rem,88vw)] md:w-[36rem] 2xl:w-[42rem]',
                 imageClassName,
               )}
             />
