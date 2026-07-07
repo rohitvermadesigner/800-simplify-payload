@@ -13,7 +13,7 @@ const slides = [
     src: '/images/taxation/slide-1.png',
     alt: 'Audit & Assurance',
     title: 'Corporate',
-    titleSecondLine: 'Tax Filling',
+    titleSecondLine: 'Tax Filing',
     price: 'AED 499',
   },
   {
