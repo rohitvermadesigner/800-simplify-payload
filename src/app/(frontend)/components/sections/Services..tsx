@@ -79,7 +79,7 @@ export default function ServiceSection() {
           </h2>
 
           <p className="text-[#4A5565] font-medium mt-2">
-            Tailored auditing, accounting, tax, and PRO solutions — everything your business needs
+            Tailored auditing, accounting, tax, and PRO solutions - everything your business needs
             to stay compliant and in control.
           </p>
         </div>

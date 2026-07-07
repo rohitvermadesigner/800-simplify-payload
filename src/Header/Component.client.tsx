@@ -72,7 +72,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
             <div className="md:shadow-sm w-full md:w-1/3 md:w-auto">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <a href="#" className="flex items-center gap-3">
+                  <a href="/" className="flex items-center gap-3">
                     <Image
                       src="/images/logo.svg"
                       width={180}

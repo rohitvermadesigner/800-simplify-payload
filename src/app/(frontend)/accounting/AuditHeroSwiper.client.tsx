@@ -19,16 +19,9 @@ const slides = [
   {
     src: '/images/accounting/slide-2.png',
     alt: 'Audit & Assurance',
-    title: 'Management and ',
-    titleSecondLine: 'Cost Accounting',
-    price: 'AED 500',
-  },
-  {
-    src: '/images/accounting/slide-3.png',
-    alt: 'Audit & Assurance',
-    title: 'Regular Monthly',
+    title: 'Annual ',
     titleSecondLine: 'Accounting',
-    price: 'AED 200',
+    price: 'AED 500',
   },
 ]
 
