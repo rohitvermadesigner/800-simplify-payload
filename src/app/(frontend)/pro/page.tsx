@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import AuditHeroSwiper from './AuditHeroSwiper.client'
 import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
-import FAQ from '../components/sections/FAQ'
+import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'Audit and assurance support for UAE businesses, including statutory audits, compliance reports, interim audit reports, revenue audits, and liquidation reports.',
 }
 
-const auditStack = [
+const proStack = [
   {
     title: 'Visa Process',
     description: `Visa delays can hold up onboarding and slow down operations. We oversee employment visa
@@ -30,6 +30,29 @@ compliance exposure. As businesses evolve, license records need to keep pace wit
 operational and ownership changes. Our professional PRO services in the UAE manage
 renewal and amendment requirements so internal teams are not pulled into authority
 coordination and approval follow-ups.`,
+  },
+]
+
+const faqs = [
+  {
+    question: 'What PRO services does 800 Simplify offer?',
+    answer: `Our professional PRO services in the UAE cover end-to-end visa processing and trade license renewals and amendments. We manage documentation and authority coordination so internal delays don’t slow down operations.`,
+  },
+  {
+    question: 'When do I need to amend a trade license?',
+    answer: `When there is a change in business activity, structure, or ownership, the UAE trade license needs to reflect it. We handle the amendments so there are no gaps between actual operations and license records.`,
+  },
+  {
+    question: 'What kind of visa processing do you handle?',
+    answer: `Our visa services in UAE include employment visa processing keeping applications and updates moving through the required authorities without delays or process gaps. This helps onboarding and workforce movement continue without disruption.`,
+  },
+  {
+    question: 'I’m a small business owner. Do I still need PRO services?',
+    answer: `Yes. Compliance applies at every stage of business. How PRO processes are managed initially affects how smoothly operations run as the business scales or expands. We keep documentation and authority processes simplified from day one so internal teams are not burdened with ongoing admin work.`,
+  },
+  {
+    question: 'Do PRO services in the UAE increase business costs?',
+    answer: `PRO processes only become costly when delays and compliance gaps build up, leading to penalties and rework. Our PRO support is priced to make commercial sense for startups, SMEs, and entrepreneurs managing lean teams.`,
   },
 ]
 
@@ -95,8 +118,8 @@ export default function AuditServicePage() {
             </div>
 
             <div className="grid gap-4">
-              <ServiceCard {...auditStack[0]} />
-              <ServiceCard {...auditStack[1]} />
+              <ServiceCard {...proStack[0]} />
+              <ServiceCard {...proStack[1]} />
             </div>
           </div>
         </div>
@@ -109,7 +132,11 @@ compliance require closer attention. From entrepreneurs to SMEs across retail, F
 and travel sectors in the UAE, our PRO support team keeps documentation and authority coordination aligned so operations are not slowed down by compliance dependencies."
       />
 
-      <FAQ />
+      <FAQBlock
+        heading="Just in case you were wondering..."
+        description="Find answers to common questions about our services."
+        items={faqs}
+      />
       <StartBuildScale />
     </main>
   )

@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import AuditHeroSwiper from './AuditHeroSwiper.client'
 import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
-import FAQ from '../components/sections/FAQ'
+import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'Audit and assurance support for UAE businesses, including statutory audits, compliance reports, interim audit reports, revenue audits, and liquidation reports.',
 }
 
-const auditStack = [
+const taxationStack = [
   {
     title: 'Corporate Tax Registration & Filing',
     description: `Corporate tax registration should be carried out with complete understanding of how the
@@ -50,6 +50,29 @@ without unnecessary back-and-forth.`,
 Missed renewals and documentation gaps with customs authorities can create severe delays.
 We manage customs registration and documentation accurately, with renewal tracking handled
 so your cross-border operations stay on schedule.`,
+  },
+]
+
+const faqs = [
+  {
+    question: 'What tax services does 800-Simplify offer?',
+    answer: `Our tax services in the UAE cover everything your business needs to stay compliant. Corporate tax registration and filing, VAT registration and filing, tax audit, tax residency and domicile, and customs registration and renewals. Every service is handled with the precision and structure required by UAE tax regulations.`,
+  },
+  {
+    question: 'I am an entrepreneur in the UAE, do I need to register for corporate tax and VAT?',
+    answer: `Your business activity and annual taxable turnover determine whether corporate tax and VAT registration apply. Under UAE corporate tax rules, businesses with income up to AED 375,000  fall under the 0% tax rate. Once that threshold is crossed, the rate moves to 9%. For VAT, the registration obligation comes in when taxable supplies reach AED 375,000 within any 12-month period Knowing where your business stands on both thresholds early makes compliance far easier to manage.`,
+  },
+  {
+    question: 'Does 800-Simplify handle tax services for businesses in free zones?',
+    answer: `Yes. Free zone businesses operate under specific tax treatments depending on zone designation and activity status. We apply the correct treatment so filings reflect actual obligations without gaps.`,
+  },
+  {
+    question: 'When does a business need a Tax Residency Certificate (TRC) in the UAE?',
+    answer: `A Tax Residency Certificate is required when accessing double taxation treaty benefits or demonstrating UAE tax residency for cross-border transactions. Our tax support team handles the process end to end so nothing is left incomplete.`,
+  },
+  {
+    question: 'Tax Audit vs Financial Audit — what is the difference?',
+    answer: `Both audits involve reviewing financial records but serve different purposes. A financial audit confirms your books are in order. A tax audit goes a step further; it verifies that the correct amount of tax has been paid and that your filings hold up under FTA scrutiny.`,
   },
 ]
 
@@ -104,7 +127,7 @@ export default function AuditServicePage() {
           </h2>
 
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-[1fr_0.9fr_1fr]">
-            <ServiceCard {...auditStack[0]} />
+            <ServiceCard {...taxationStack[0]} />
             <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
               <Image
                 src="/images/taxation/taxation-service.png"
@@ -115,10 +138,10 @@ export default function AuditServicePage() {
               <div className="absolute inset-0 bg-[#652D8E]/10" />
             </div>
 
-            <ServiceCard {...auditStack[1]} />
-            <ServiceCard {...auditStack[2]} />
-            <ServiceCard {...auditStack[3]} />
-            <ServiceCard {...auditStack[4]} />
+            <ServiceCard {...taxationStack[1]} />
+            <ServiceCard {...taxationStack[2]} />
+            <ServiceCard {...taxationStack[3]} />
+            <ServiceCard {...taxationStack[4]} />
           </div>
         </div>
       </section>
@@ -131,7 +154,11 @@ complexity with focused tax consulting and structured filings so businesses stay
 in control."
       />
 
-      <FAQ />
+      <FAQBlock
+        heading="Just in case you were wondering..."
+        description="Find answers to common questions about our services."
+        items={faqs}
+      />
       <StartBuildScale />
     </main>
   )

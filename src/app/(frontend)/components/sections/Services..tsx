@@ -9,7 +9,7 @@ import Link from 'next/link'
 const services = [
   {
     title: 'Audit & Assurance',
-    href: '/services/audit',
+    href: '/audit',
     icon: '/images/icon-audit-assurance.png',
     tagline: 'Disciplined audits for smarter business moves.',
     description:
@@ -25,7 +25,7 @@ const services = [
   },
   {
     title: 'Accounting & Bookkeeping',
-    href: '/services/accounting',
+    href: '/accounting',
     icon: '/images/icon-accounting-bookkeeping.png',
     tagline: 'Your business moves fast. Your accounting should keep up.',
     description:
@@ -39,7 +39,7 @@ const services = [
   },
   {
     title: 'Taxation Services',
-    href: '/services/taxation',
+    href: '/taxation',
     icon: '/images/icon-taxation-services.png',
     tagline: "Pay what's due. Not a dirham more or less.",
     description:
@@ -56,7 +56,7 @@ const services = [
   },
   {
     title: 'PRO Services',
-    href: '/services/pro',
+    href: '/pro',
     icon: '/images/icon-pro-services.png',
     tagline: 'Smooth renewals. Steady operations.',
     description:

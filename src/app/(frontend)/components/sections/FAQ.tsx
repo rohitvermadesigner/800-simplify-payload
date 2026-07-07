@@ -36,7 +36,7 @@ const FAQ = () => {
 
   return (
     <section>
-      <div className="relative max-w-6xl mx-auto py-8 md:py-16 px-4 md:px-4 lg:px-0">
+      <div className="relative max-w-7xl mx-auto py-8 md:py-16 px-4 md:px-4 lg:px-0">
         <div className="lg:px-56">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#2F3B51] mt-4">

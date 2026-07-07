@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import AuditHeroSwiper from './AuditHeroSwiper.client'
 import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
-import FAQ from '../components/sections/FAQ'
+import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
@@ -45,6 +45,37 @@ line with IFRS 15 to confirm there is no gap between reported income and actual 
     description: `Interim audits work as a mid-year checkpoint on financial performance. As registered auditors in the
 UAE, we cross-check records early to identify inconsistencies before final audit pressure starts building.
 Businesses also get a better understanding of their financial position and reporting accuracy.`,
+  },
+]
+
+const faqs = [
+  {
+    question: 'What audit services does 800 Simplify offer?',
+    answer: `Our auditing consultancy services cover everything your business needs to stay audit-ready.
+External/statutory audits, compliance audits, review management report, interim audit report, and
+sales/revenue audit. Beyond a company audit report, businesses gain clearer visibility into areas that
+need tighter oversight before risks start compounding.`,
+  },
+  {
+    question: 'Why do I need an external auditor?',
+    answer: `External auditors review past financial records to trace where reporting gaps have emerged. This helps
+businesses pinpoint areas that need immediate attention before they affect future reporting cycles.`,
+  },
+  {
+    question: 'How does a compliance audit help my business?',
+    answer: `Compliance audits review whether your operations meet UAE compliance requirements and identify
+where they fall short of regulatory standards.`,
+  },
+  {
+    question: 'Can audits in the UAE help improve business performance?',
+    answer: `Annual financial audits uncover inefficiencies and operational risks that disrupt day-to-day processes.
+They give businesses clearer financial visibility and better support for routine decision-making.`,
+  },
+  {
+    question: 'Do I need to appoint approved auditors for my free zone company in the UAE?',
+    answer: `Yes. Freezone audits require approved auditors in UAE. At 800-Simplify, we work with entities in major
+free zones, including DMCC and DIFC to JAFZA, DED, DWC, DAFZA, TECOM, SAIF, DSO, and more.
+You run your business, we take care of your audits.`,
   },
 ]
 
@@ -126,7 +157,11 @@ specific compliance bottlenecks through accurate audit processes. Businesses are
 financial data for stronger decision-making."
       />
 
-      <FAQ />
+      <FAQBlock
+        heading="Just in case you were wondering..."
+        description="Find answers to common questions about our services."
+        items={faqs}
+      />
       <StartBuildScale />
     </main>
   )

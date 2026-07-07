@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import AuditHeroSwiper from './AuditHeroSwiper.client'
 import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
-import FAQ from '../components/sections/FAQ'
+import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'Audit and assurance support for UAE businesses, including statutory audits, compliance reports, interim audit reports, revenue audits, and liquidation reports.',
 }
 
-const auditStack = [
+const accountingStack = [
   {
     title: 'External / Statutory Audit',
     description: `Businesses rely on financial reports to make operational decisions, but that only works when
@@ -43,6 +43,30 @@ manage budgeting more effectively.`,
     description: `Accuracy of financial records is directly proportionate to flawless reconciliation. Unverified balances and missing adjustments create pressure during financial reviews. As an
 accounting firm in UAE, we review and reconcile accounts to ensure accuracy and resolve
 discrepancies so businesses maintain reliable records.`,
+  },
+]
+
+const faqs = [
+  {
+    question: 'What accounting and bookkeeping services does 800-Simplify offer in the UAE?',
+    answer: `Our accounting services cover everything businesses need to keep reporting organised and records review-ready. Bookkeeping, MIS reporting, management accounting, cost accounting, and account reconciliation. The focus stays on keeping records organised and reporting reliable as transaction volumes grow.`,
+  },
+  {
+    question:
+      'In-house or outsourced accounting services in the UAE - what is better for UAE SMEs?',
+    answer: `For many SMEs, maintaining an in-house finance team adds extra internal costs. Outsourcing accounting services helps businesses keep reporting consistent without adding cost pressure or the responsibility of managing an in-house team.`,
+  },
+  {
+    question: 'What is MIS reporting, and how does it benefit my business?',
+    answer: `MIS reporting gives businesses a clearer view of a business&#39;s financial performance. Bi-annual and annual accounting reports help track cash flow and revenue more clearly for routine decision-making.`,
+  },
+  {
+    question: 'How much are small business accounting fees in the UAE?',
+    answer: `The cost of accounting services varies based on transaction volume and reporting requirements. At 800-Simplify, we offer flexible accounting packages, designed to support different stages of business growth.`,
+  },
+  {
+    question: 'Why do UAE startups and small businesses need professional accounting services?',
+    answer: `As operations expand, financial record management become harder to maintain internally. Our team of accountants offer professional accounting companies in the UAE to help businesses keep records organised and accounting aligned with growing business activity.`,
   },
 ]
 
@@ -100,8 +124,8 @@ export default function AuditServicePage() {
 
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-[1fr_0.9fr_1fr]">
             <div className="grid gap-4">
-              <ServiceCard {...auditStack[0]} />
-              <ServiceCard {...auditStack[1]} />
+              <ServiceCard {...accountingStack[0]} />
+              <ServiceCard {...accountingStack[1]} />
             </div>
 
             <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
@@ -115,8 +139,8 @@ export default function AuditServicePage() {
             </div>
 
             <div className="grid gap-4">
-              <ServiceCard {...auditStack[2]} />
-              <ServiceCard {...auditStack[3]} />
+              <ServiceCard {...accountingStack[2]} />
+              <ServiceCard {...accountingStack[3]} />
             </div>
           </div>
         </div>
@@ -130,7 +154,11 @@ processes, giving clearer financial visibility and improved reporting consistenc
 operations."
       />
 
-      <FAQ />
+      <FAQBlock
+        heading="Just in case you were wondering..."
+        description="Find answers to common questions about our services."
+        items={faqs}
+      />
       <StartBuildScale />
     </main>
   )
