@@ -10,9 +10,9 @@ import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
-  title: 'Audit & Assurance Services in UAE | 800-Simplify',
+  title: 'Auditing Services by Registered Auditors in UAE | 800-Simplify',
   description:
-    'Audit and assurance support for UAE businesses, including statutory audits, compliance reports, interim audit reports, revenue audits, and liquidation reports.',
+    'Get certified auditing services starting from just AED 500. Our registered auditors provide hassle-free compliance and financial reporting for UAE businesses.',
 }
 
 const auditStack = [
@@ -49,13 +49,6 @@ Businesses also get a better understanding of their financial position and repor
 ]
 
 const faqs = [
-  {
-    question: 'What audit services does 800 Simplify offer?',
-    answer: `Our auditing consultancy services cover everything your business needs to stay audit-ready.
-External/statutory audits, compliance audits, review management report, interim audit report, and
-sales/revenue audit. Beyond a company audit report, businesses gain clearer visibility into areas that
-need tighter oversight before risks start compounding.`,
-  },
   {
     question: 'Why do I need an external auditor?',
     answer: `External auditors review past financial records to trace where reporting gaps have emerged. This helps
@@ -151,7 +144,7 @@ export default function AuditServicePage() {
       </section>
 
       <ServiceHightlightComponent
-        title="Audit services that meet UAE business needs."
+        title="Audit solutions that meet UAE business needs."
         para="From entrepreneurs trading in retail or pharma, to SMEs in F&B, travel and tourism, we address industry-
 specific compliance bottlenecks through accurate audit processes. Businesses are equipped with reliable
 financial data for stronger decision-making."

@@ -10,9 +10,9 @@ import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
-  title: 'Audit & Assurance Services in UAE | 800-Simplify',
+  title: 'Accounting & Bookkeeping Services in UAE | 800-Simplify',
   description:
-    'Audit and assurance support for UAE businesses, including statutory audits, compliance reports, interim audit reports, revenue audits, and liquidation reports.',
+    'Professional accounting services for UAE SMEs starting from AED 200/month. Expert bookkeeping, MIS reporting, management and cost accounting.',
 }
 
 const accountingStack = [
@@ -47,10 +47,6 @@ discrepancies so businesses maintain reliable records.`,
 ]
 
 const faqs = [
-  {
-    question: 'What accounting and bookkeeping services does 800-Simplify offer in the UAE?',
-    answer: `Our accounting services cover everything businesses need to keep reporting organised and records review-ready. Bookkeeping, MIS reporting, management accounting, cost accounting, and account reconciliation. The focus stays on keeping records organised and reporting reliable as transaction volumes grow.`,
-  },
   {
     question:
       'In-house or outsourced accounting services in the UAE - what is better for UAE SMEs?',

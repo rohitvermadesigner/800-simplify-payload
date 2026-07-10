@@ -10,9 +10,9 @@ import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
-  title: 'Audit & Assurance Services in UAE | 800-Simplify',
+  title: 'Affordable PRO Services UAE | Visa & License | 800-Simplify',
   description:
-    'Audit and assurance support for UAE businesses, including statutory audits, compliance reports, interim audit reports, revenue audits, and liquidation reports.',
+    'Streamline your business workflows. Expert UAE PRO services covering visa applications starting from AED 299 and license renewal & amendments starting from AED 499. ',
 }
 
 const proStack = [
@@ -34,10 +34,6 @@ coordination and approval follow-ups.`,
 ]
 
 const faqs = [
-  {
-    question: 'What PRO services does 800 Simplify offer?',
-    answer: `Our professional PRO services in the UAE cover end-to-end visa processing and trade license renewals and amendments. We manage documentation and authority coordination so internal delays don’t slow down operations.`,
-  },
   {
     question: 'When do I need to amend a trade license?',
     answer: `When there is a change in business activity, structure, or ownership, the UAE trade license needs to reflect it. We handle the amendments so there are no gaps between actual operations and license records.`,

@@ -10,9 +10,9 @@ import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
 
 export const metadata: Metadata = {
-  title: 'Audit & Assurance Services in UAE | 800-Simplify',
+  title: 'Tax Services in UAE startups & SMEs| 800-Simplify',
   description:
-    'Audit and assurance support for UAE businesses, including statutory audits, compliance reports, interim audit reports, revenue audits, and liquidation reports.',
+    'Expert tax solutions for growing businesses in the UAE. From VAT & Corporate Tax registration & filing to tax audits and TRC, we handle it all without the premium.',
 }
 
 const taxationStack = [
@@ -54,10 +54,6 @@ so your cross-border operations stay on schedule.`,
 ]
 
 const faqs = [
-  {
-    question: 'What tax services does 800-Simplify offer?',
-    answer: `Our tax services in the UAE cover everything your business needs to stay compliant. Corporate tax registration and filing, VAT registration and filing, tax audit, tax residency and domicile, and customs registration and renewals. Every service is handled with the precision and structure required by UAE tax regulations.`,
-  },
   {
     question: 'I am an entrepreneur in the UAE, do I need to register for corporate tax and VAT?',
     answer: `Your business activity and annual taxable turnover determine whether corporate tax and VAT registration apply. Under UAE corporate tax rules, businesses with income up to AED 375,000  fall under the 0% tax rate. Once that threshold is crossed, the rate moves to 9%. For VAT, the registration obligation comes in when taxable supplies reach AED 375,000 within any 12-month period Knowing where your business stands on both thresholds early makes compliance far easier to manage.`,
