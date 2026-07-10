@@ -1,157 +1,164 @@
-"use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import Image from "next/image";
+'use client'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import Image from 'next/image'
+import { cn } from '@/utilities/ui'
 
 const affiliationLogos = [
   {
-    src: "/images/affiliation/affiliation1.webp",
-    alt: "Dubai Multi Commodities Centre",
+    src: '/images/affiliation/affiliation1.webp',
+    alt: 'Dubai Multi Commodities Centre',
   },
   {
-    src: "/images/affiliation/affiliation2.webp",
-    alt: "Dubai Design District",
+    src: '/images/affiliation/affiliation2.webp',
+    alt: 'Dubai Design District',
   },
   {
-    src: "/images/affiliation/affiliation4.webp",
-    alt: "Dubai International Financial Centre (DIFC)",
+    src: '/images/affiliation/affiliation4.webp',
+    alt: 'Dubai International Financial Centre (DIFC)',
   },
   {
-    src: "/images/affiliation/affiliation5.webp",
-    alt: "Dubai Airport Free Zone (DAFZA)",
+    src: '/images/affiliation/affiliation5.webp',
+    alt: 'Dubai Airport Free Zone (DAFZA)',
   },
   {
-    src: "/images/affiliation/affiliation6.webp",
-    alt: "NAKHEEL",
+    src: '/images/affiliation/affiliation6.webp',
+    alt: 'NAKHEEL',
   },
   {
-    src: "/images/affiliation/affiliation7.webp",
-    alt: "Dubai Internet City",
+    src: '/images/affiliation/affiliation7.webp',
+    alt: 'Dubai Internet City',
   },
   {
-    src: "/images/affiliation/affiliation8.webp",
-    alt: "Dubai Studio City",
+    src: '/images/affiliation/affiliation8.webp',
+    alt: 'Dubai Studio City',
   },
   {
-    src: "/images/affiliation/affiliation9.webp",
-    alt: "Dubai Media City",
+    src: '/images/affiliation/affiliation9.webp',
+    alt: 'Dubai Media City',
   },
   {
-    src: "/images/affiliation/affiliation10.webp",
-    alt: "Global Trusted e-Network",
+    src: '/images/affiliation/affiliation10.webp',
+    alt: 'Global Trusted e-Network',
   },
   {
-    src: "/images/affiliation/affiliation11.webp",
-    alt: "DUBAI CHAMBER",
+    src: '/images/affiliation/affiliation11.webp',
+    alt: 'DUBAI CHAMBER',
   },
   {
-    src: "/images/affiliation/affiliation12.webp",
-    alt: "JAFZA",
+    src: '/images/affiliation/affiliation12.webp',
+    alt: 'JAFZA',
   },
   {
-    src: "/images/affiliation/affiliation13.webp",
-    alt: "Dubai Silicon Oasis Authority",
+    src: '/images/affiliation/affiliation13.webp',
+    alt: 'Dubai Silicon Oasis Authority',
   },
   {
-    src: "/images/affiliation/affiliation14.webp",
-    alt: "IFZA",
+    src: '/images/affiliation/affiliation14.webp',
+    alt: 'IFZA',
   },
   {
-    src: "/images/affiliation/affiliation15.webp",
-    alt: "Dubai Healthcare City",
+    src: '/images/affiliation/affiliation15.webp',
+    alt: 'Dubai Healthcare City',
   },
   {
-    src: "/images/affiliation/affiliation16.webp",
-    alt: "UAQ Free Trade Zone",
+    src: '/images/affiliation/affiliation16.webp',
+    alt: 'UAQ Free Trade Zone',
   },
   {
-    src: "/images/affiliation/affiliation18.webp",
-    alt: "DUBAI DEVELOPMENT AUTHORITY",
+    src: '/images/affiliation/affiliation18.webp',
+    alt: 'DUBAI DEVELOPMENT AUTHORITY',
   },
   {
-    src: "/images/affiliation/affiliation19.webp",
-    alt: "SAIF Zone",
+    src: '/images/affiliation/affiliation19.webp',
+    alt: 'SAIF Zone',
   },
   {
-    src: "/images/affiliation/affiliation20.webp",
-    alt: "Dubai World Central (DWC)",
+    src: '/images/affiliation/affiliation20.webp',
+    alt: 'Dubai World Central (DWC)',
   },
   {
-    src: "/images/affiliation/affiliation21.webp",
-    alt: "Department of Economic Development",
+    src: '/images/affiliation/affiliation21.webp',
+    alt: 'Department of Economic Development',
   },
   {
-    src: "/images/affiliation/affiliation23.webp",
-    alt: "HFZA (Hamriyah Free Zone Authority)",
+    src: '/images/affiliation/affiliation23.webp',
+    alt: 'HFZA (Hamriyah Free Zone Authority)',
   },
   {
-    src: "/images/affiliation/affiliation24.webp",
-    alt: "ISO 9001:2015 Accredited Certification",
+    src: '/images/affiliation/affiliation24.webp',
+    alt: 'ISO 9001:2015 Accredited Certification',
   },
   {
-    src: "/images/affiliation/affiliation25.webp",
-    alt: "IRQAO",
+    src: '/images/affiliation/affiliation25.webp',
+    alt: 'IRQAO',
   },
   {
-    src: "/images/affiliation/affiliation27.webp",
-    alt: "QUALITY PLUS",
+    src: '/images/affiliation/affiliation27.webp',
+    alt: 'QUALITY PLUS',
   },
   {
-    src: "/images/affiliation/affiliation28.webp",
-    alt: "Creative City Fujairah",
+    src: '/images/affiliation/affiliation28.webp',
+    alt: 'Creative City Fujairah',
   },
   {
-    src: "/images/affiliation/affiliation29.webp",
-    alt: "MEYDAN",
+    src: '/images/affiliation/affiliation29.webp',
+    alt: 'MEYDAN',
   },
   {
-    src: "/images/affiliation/affiliation30.webp",
-    alt: "Ajman Free Zone Authority",
+    src: '/images/affiliation/affiliation30.webp',
+    alt: 'Ajman Free Zone Authority',
   },
   {
-    src: "/images/affiliation/affiliation31.webp",
-    alt: "Dubai World Trade Centre",
+    src: '/images/affiliation/affiliation31.webp',
+    alt: 'Dubai World Trade Centre',
   },
   {
-    src: "/images/affiliation/affiliation32.webp",
-    alt: "TECOM",
+    src: '/images/affiliation/affiliation32.webp',
+    alt: 'TECOM',
   },
   {
-    src: "/images/affiliation/affiliation33.webp",
-    alt: "RAKEZ",
+    src: '/images/affiliation/affiliation33.webp',
+    alt: 'RAKEZ',
   },
   {
-    src: "/images/affiliation/affiliation34.webp",
-    alt: "ICC",
+    src: '/images/affiliation/affiliation34.webp',
+    alt: 'ICC',
   },
   {
-    src: "/images/affiliation/affiliation35.webp",
-    alt: "Dubai Commerce City",
+    src: '/images/affiliation/affiliation35.webp',
+    alt: 'Dubai Commerce City',
   },
   {
-    src: "/images/affiliation/affiliation36.webp",
-    alt: "Masdar City",
+    src: '/images/affiliation/affiliation36.webp',
+    alt: 'Masdar City',
   },
   {
-    src: "/images/affiliation/affiliation37.webp",
-    alt: "Abu Dhabi Airport Free Zone (ADAFZ)",
+    src: '/images/affiliation/affiliation37.webp',
+    alt: 'Abu Dhabi Airport Free Zone (ADAFZ)',
   },
   {
-    src: "/images/affiliation/affiliation38.webp",
-    alt: "KHALIFA INDUSTRIAL ZONE ABU DHABI (KIZAD)",
+    src: '/images/affiliation/affiliation38.webp',
+    alt: 'KHALIFA INDUSTRIAL ZONE ABU DHABI (KIZAD)',
   },
   {
-    src: "/images/affiliation/affiliation39.webp",
-    alt: "TWOFOUR54",
+    src: '/images/affiliation/affiliation39.webp',
+    alt: 'TWOFOUR54',
   },
-];
+]
 
-const LogoSlider = () => {
+type LogoSliderProps = {
+  classNameMain?: string
+  classNameTitle?: string
+  logoImg?: string
+}
+
+const LogoSlider = ({ classNameMain, classNameTitle, logoImg }: LogoSliderProps) => {
   return (
-    <section className="bg-[#E4763D] relative overflow-hidden">
+    <section className={cn('bg-[#E4763D] relative overflow-hidden', classNameMain)}>
       <Image
         src="/images/icons/2sqare-outline-bg.png"
         alt=""
@@ -168,7 +175,7 @@ const LogoSlider = () => {
       />
       <div className="relative max-w-7xl mx-auto py-8 md:py-8 px-4 md:px-0 text-center">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className={cn('text-3xl md:text-4xl font-bold text-white', classNameTitle)}>
             Affiliations and Accreditations
           </h2>
         </div>
@@ -208,14 +215,17 @@ const LogoSlider = () => {
                 width={180}
                 height={128}
                 alt={logo.alt}
-                className="h-20 md:h-32 w-full object-contain bg-white border border-[#EEEEEE] rounded-lg p-2"
+                className={cn(
+                  'h-20 md:h-32 w-full object-contain bg-white border border-[#EEEEEE] rounded-lg p-2',
+                  logoImg,
+                )}
               />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default LogoSlider;
+export default LogoSlider
