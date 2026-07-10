@@ -24,8 +24,8 @@ const slides = [
   {
     src: '/images/audit/slide-3.png',
     alt: 'Audit & Assurance',
-    title: 'Audit',
-    titleSecondLine: 'Review Report',
+    title: 'Management',
+    titleSecondLine: 'Audit Report',
   },
 ]
 

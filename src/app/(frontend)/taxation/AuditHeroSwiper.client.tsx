@@ -30,6 +30,13 @@ const slides = [
     titleSecondLine: 'Registration',
     price: 'AED 399',
   },
+  {
+    src: '/images/taxation/slide-4.png',
+    alt: 'Audit & Assurance',
+    title: 'VAT Returns',
+    titleSecondLine: 'Filing',
+    price: 'AED 200/Qtr.',
+  },
 ]
 
 export default function AuditHeroSwiper() {

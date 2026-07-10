@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 const accountingStack = [
   {
-    title: 'External / Statutory Audit',
+    title: 'Bookkeeping & MIS Reporting',
     description: `Businesses rely on financial reports to make operational decisions, but that only works when
 records stay accurate and consistently updated. Disorganized records often affect financial
 tracking and reporting reliability. Our bookkeeping services in UAE deliver practical insights
@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     question: 'What is MIS reporting, and how does it benefit my business?',
-    answer: `MIS reporting gives businesses a clearer view of a business&#39;s financial performance. Bi-annual and annual accounting reports help track cash flow and revenue more clearly for routine decision-making.`,
+    answer: `MIS reporting gives businesses a clearer view of a business's financial performance. Bi-annual and annual accounting reports help track cash flow and revenue more clearly for routine decision-making.`,
   },
   {
     question: 'How much are small business accounting fees in the UAE?',

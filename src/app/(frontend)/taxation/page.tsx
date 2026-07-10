@@ -56,7 +56,7 @@ so your cross-border operations stay on schedule.`,
 const faqs = [
   {
     question: 'I am an entrepreneur in the UAE, do I need to register for corporate tax and VAT?',
-    answer: `Your business activity and annual taxable turnover determine whether corporate tax and VAT registration apply. Under UAE corporate tax rules, businesses with income up to AED 375,000  fall under the 0% tax rate. Once that threshold is crossed, the rate moves to 9%. For VAT, the registration obligation comes in when taxable supplies reach AED 375,000 within any 12-month period Knowing where your business stands on both thresholds early makes compliance far easier to manage.`,
+    answer: `Your business activity and annual taxable turnover determine whether corporate tax and VAT registration apply. Under UAE corporate tax rules, businesses with profit up to AED 375,000  fall under the 0% tax rate. Once that threshold is crossed, the rate moves to 9%. For VAT, the registration obligation comes in when taxable supplies reach AED 375,000 within any 12-month period Knowing where your business stands on both thresholds early makes compliance far easier to manage.`,
   },
   {
     question: 'Does 800-Simplify handle tax services for businesses in free zones?',
