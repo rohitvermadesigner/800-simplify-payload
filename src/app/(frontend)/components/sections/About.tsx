@@ -71,7 +71,7 @@ while the Spends are light.`}
         </p>
       }
       image={{
-        url: '/images/about-800-simplify.png',
+        url: '/images/about.png',
         alt: 'About',
       }}
       features={[

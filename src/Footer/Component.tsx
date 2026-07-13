@@ -53,15 +53,7 @@ export async function Footer() {
               <ul className="list-disc pl-5 marker:text-[#8200DB]">
                 <li>
                   <Link
-                    href="#services"
-                    className="text-[0.9rem] text-[#4A5565] font-medium block mb-3"
-                  >
-                    Accounting & Bookkeeping
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#services"
+                    href="audit"
                     className="text-[0.9rem] text-[#4A5565] font-medium block mb-3"
                   >
                     Audit & Assurance
@@ -69,17 +61,22 @@ export async function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="#services"
+                    href="accounting"
+                    className="text-[0.9rem] text-[#4A5565] font-medium block mb-3"
+                  >
+                    Accounting & Bookkeeping
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="taxation"
                     className="text-[0.9rem] text-[#4A5565] font-medium block mb-3"
                   >
                     Taxation Services
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="#services"
-                    className="text-[0.9rem] text-[#4A5565] font-medium block mb-3"
-                  >
+                  <Link href="pro" className="text-[0.9rem] text-[#4A5565] font-medium block mb-3">
                     PRO Services
                   </Link>
                 </li>

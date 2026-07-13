@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Phone } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -12,9 +12,9 @@ const slides = [
   {
     src: '/images/package-landing-page/slide-1.png',
     alt: '800 Simplify Package Landing Page',
-    title: 'Built for businesses that',
-    titleSecondLine: 'appreciate value',
-    para: 'Choose the level of financial oversight that matches your operations. Upgrade anytime.',
+    title: 'Affordable audit, tax, PRO, accounting & ',
+    titleSecondLine: 'bookkeeping package in the UAE.',
+    para: 'Built for businesses that appreciate value.',
   },
 ]
 
