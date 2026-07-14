@@ -1,5 +1,7 @@
 'use client'
 
+import type { FormEvent } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
@@ -13,6 +15,46 @@ const hero = {
 }
 
 export default function Hero() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [formMessage, setFormMessage] = useState('')
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    setFormStatus('loading')
+    setFormMessage('')
+
+    try {
+      const response = await fetch('/api/package-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          phone: formData.get('phone'),
+          email: formData.get('email'),
+        }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result?.message || 'Unable to send your enquiry right now.')
+      }
+
+      setFormStatus('success')
+      setFormMessage('Thank you. Your enquiry has been sent.')
+      form.reset()
+    } catch (error) {
+      setFormStatus('error')
+      setFormMessage(error instanceof Error ? error.message : 'Unable to send your enquiry right now.')
+    }
+  }
+
   return (
     <section className="relative overflow-hidden bg-black">
       <div className="relative">
@@ -69,7 +111,7 @@ export default function Hero() {
 
           <form
             className="w-full rounded-lg bg-[rgba(48,41,30,0.52)] px-5 md:px-7 py-5 md:py-9 shadow-2xl backdrop-blur-md md:justify-self-end lg:w-[404px]"
-            onSubmit={(event) => event.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <h2 className="mb-7 text-center text-xl font-bold text-white">
               Let&apos;s discuss your finance needs
@@ -99,10 +141,23 @@ export default function Hero() {
               />
               <button
                 type="submit"
-                className="mt-1 h-12 rounded-[4px] bg-[linear-gradient(90deg,#B350B6,#64269C)] text-sm font-bold text-white transition hover:opacity-95"
+                disabled={formStatus === 'loading'}
+                className="mt-1 h-12 rounded-[4px] bg-[linear-gradient(90deg,#B350B6,#64269C)] text-sm font-bold text-white transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Submit
+                {formStatus === 'loading' ? 'Submitting...' : 'Submit'}
               </button>
+
+              {formMessage ? (
+                <p
+                  className={
+                    formStatus === 'success'
+                      ? 'text-center text-sm font-semibold text-[#8EF2A0]'
+                      : 'text-center text-sm font-semibold text-[#FFB4B4]'
+                  }
+                >
+                  {formMessage}
+                </p>
+              ) : null}
             </div>
           </form>
         </div>
