@@ -256,7 +256,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
 
             <div className="md:block hidden">
               <Link
-                href="https://800-simplify.org/800-simplify/?focus=true"
+                href="https://wa.me/97145579552"
                 target="_blank"
                 className="bg-[#652D8E] text-[#ffffff] py-3 px-5 rounded-lg ml-0 md:ml-24 drop-shadow-[2px_4px_10px_#AD46FF4D]"
               >

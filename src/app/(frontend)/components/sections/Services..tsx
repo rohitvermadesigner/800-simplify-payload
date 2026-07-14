@@ -107,10 +107,11 @@ export default function ServiceSection() {
           >
             {services.map((service) => (
               <SwiperSlide key={service.title} className="!h-auto flex py-4">
-                <Link
+                {/* <Link
                   href={service.href}
                   className="block h-full w-full border-2 border-[#F3F4F6] rounded-[0.9rem] p-6 text-left bg-white hover:-translate-y-[10px] duration-300"
-                >
+                > */}
+                <div className="block h-full w-full border-2 border-[#F3F4F6] rounded-[0.9rem] p-6 text-left bg-white hover:-translate-y-[10px] duration-300">
                   <div className="flex gap-4">
                     <div className="bg-[linear-gradient(90deg,#9D4A9A,#652D8E)] rounded-xl w-14 h-14 flex items-center justify-center shrink-0">
                       <Image
@@ -139,7 +140,8 @@ export default function ServiceSection() {
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                </Link>
+                </div>
+                {/* </Link> */}
               </SwiperSlide>
             ))}
           </Swiper>

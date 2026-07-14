@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import React from 'react'
+import Link from 'next/link'
+import { ArrowRight, Phone } from 'lucide-react'
 
 function Hero() {
   return (
@@ -34,8 +34,7 @@ function Hero() {
               </h1>
 
               <p className="mt-4 mb-6 text-md md:text-2xl">
-                Effective Solutions for Audit, Accounting, Tax and PRO Services
-                in the UAE.
+                Effective Solutions for Audit, Accounting, Tax and PRO Services in the UAE.
               </p>
 
               <div className="flex flex-wrap gap-4 mt-8">
@@ -47,10 +46,7 @@ function Hero() {
                   Write to us <ArrowRight />
                 </Link>
 
-                <Link
-                  href="tel:80074675439"
-                  className="btn-secondary inline-flex gap-2"
-                >
+                <Link href="tel:80074675439" className="btn-secondary inline-flex gap-2">
                   <Phone />
                   Let&apos;s Talk
                 </Link>
@@ -60,7 +56,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

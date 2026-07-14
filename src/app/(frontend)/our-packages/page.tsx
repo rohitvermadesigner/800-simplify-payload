@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Calendar } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
 
-import HeroSwiper from './HeroSwiper.client'
+import Hero from './Hero.client'
 import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import LogoSlider from '../components/sections/LogoSlider'
 
@@ -33,20 +34,20 @@ const packages: PackagePlan[] = [
     title: 'Core Package',
     description: 'For startups, small business or companies getting their financial footing.',
     price: '800',
-    image: '/images/package-landing-page/core.png',
+    image: '/images/package/core.png',
     imageAlt: 'Entrepreneur reviewing financial details on a tablet',
     features1: [
       {
         name: 'Accounting',
-        img: '/images/package-landing-page/icons/accounting.svg',
+        img: '/images/package/icons/accounting.svg',
       },
       {
         name: 'VAT Returns Filing',
-        img: '/images/package-landing-page/icons/vat-return.svg',
+        img: '/images/package/icons/vat-return.svg',
       },
       {
         name: 'Email Support',
-        img: '/images/package-landing-page/icons/email-support.svg',
+        img: '/images/package/icons/email-support.svg',
       },
     ],
   },
@@ -54,43 +55,43 @@ const packages: PackagePlan[] = [
     title: 'Advanced Package',
     description: 'For growing businesses seeking better controls and financial insights.',
     price: '1,200',
-    image: '/images/package-landing-page/advanced.png',
+    image: '/images/package/advanced.png',
     imageAlt: 'Business team reviewing documents together',
     popular: true,
     features1: [
       {
         name: 'Accounting',
-        img: '/images/package-landing-page/icons/accounting.svg',
+        img: '/images/package/icons/accounting.svg',
       },
       {
         name: 'VAT Returns Filing',
-        img: '/images/package-landing-page/icons/vat-return.svg',
+        img: '/images/package/icons/vat-return.svg',
       },
       {
         name: 'Email Support',
-        img: '/images/package-landing-page/icons/email-support.svg',
+        img: '/images/package/icons/email-support.svg',
       },
       {
         name: 'Call Support',
-        img: '/images/package-landing-page/icons/call-support.svg',
+        img: '/images/package/icons/call-support.svg',
       },
       {
         name: 'VAT Compliance',
-        img: '/images/package-landing-page/icons/vat-compliance.svg',
+        img: '/images/package/icons/vat-compliance.svg',
       },
       {
         name: 'Regular Updates to Regulatory Changes',
-        img: '/images/package-landing-page/icons/regular-update.svg',
+        img: '/images/package/icons/regular-update.svg',
       },
     ],
     features2: [
       {
         name: 'License Renewal',
-        img: '/images/package-landing-page/icons/license-renewal.svg',
+        img: '/images/package/icons/license-renewal.svg',
       },
       {
         name: 'Corporate Tax Returns Filing',
-        img: '/images/package-landing-page/icons/corporate-tax.svg',
+        img: '/images/package/icons/corporate-tax.svg',
       },
     ],
   },
@@ -99,62 +100,62 @@ const packages: PackagePlan[] = [
     description:
       'For established organization seeking full scale financial oversight and strategic advisory.',
     price: '2,500',
-    image: '/images/package-landing-page/elite.png',
+    image: '/images/package/elite.png',
     imageAlt: 'Business advisors discussing financial planning',
     features1: [
       {
         name: 'Accounting',
-        img: '/images/package-landing-page/icons/accounting.svg',
+        img: '/images/package/icons/accounting.svg',
       },
       {
         name: 'VAT Returns Filing',
-        img: '/images/package-landing-page/icons/vat-return.svg',
+        img: '/images/package/icons/vat-return.svg',
       },
       {
         name: 'Email Support',
-        img: '/images/package-landing-page/icons/email-support.svg',
+        img: '/images/package/icons/email-support.svg',
       },
       {
         name: 'Call Support',
-        img: '/images/package-landing-page/icons/call-support.svg',
+        img: '/images/package/icons/call-support.svg',
       },
       {
         name: 'VAT Compliance',
-        img: '/images/package-landing-page/icons/vat-compliance.svg',
+        img: '/images/package/icons/vat-compliance.svg',
       },
       {
         name: 'Regular Updates to Regulatory Changes',
-        img: '/images/package-landing-page/icons/regular-update.svg',
+        img: '/images/package/icons/regular-update.svg',
       },
     ],
     features2: [
       {
         name: 'License Renewal',
-        img: '/images/package-landing-page/icons/license-renewal.svg',
+        img: '/images/package/icons/license-renewal.svg',
       },
       {
         name: 'Corporate Tax Returns Filing',
-        img: '/images/package-landing-page/icons/corporate-tax.svg',
+        img: '/images/package/icons/corporate-tax.svg',
       },
       {
         name: 'Dedicated Account Manager',
-        img: '/images/package-landing-page/icons/dedicated-account.svg',
+        img: '/images/package/icons/dedicated-account.svg',
       },
       {
         name: 'Annual Audit Report',
-        img: '/images/package-landing-page/icons/annual-audit-report.svg',
+        img: '/images/package/icons/annual-audit-report.svg',
       },
       {
         name: 'Monthly Meetings',
-        img: '/images/package-landing-page/icons/monthly-meetings.svg',
+        img: '/images/package/icons/monthly-meetings.svg',
       },
       {
         name: 'VAT Renewal (Up to 2 per year)',
-        img: '/images/package-landing-page/icons/vat-renewal.svg',
+        img: '/images/package/icons/vat-renewal.svg',
       },
       {
         name: 'Corporate Tax Compliance',
-        img: '/images/package-landing-page/icons/corporate-tax.svg',
+        img: '/images/package/icons/corporate-tax.svg',
       },
     ],
   },
@@ -179,6 +180,12 @@ function ServiceCard({ title, description }: { title: string; description: strin
 function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
   const isAdvanced = plan.popular
   const imageFirst = index === 1
+  const isFirstCard = index === 0
+  const priceClassName = isAdvanced
+    ? 'text-5xl font-bold text-white'
+    : plan.title === 'Elite Package'
+      ? 'bg-[linear-gradient(90deg,#4F39F6,#155DFC)] bg-clip-text text-5xl font-bold text-transparent'
+      : 'bg-[linear-gradient(90deg,#2B7FFF,#00B8DB)] bg-clip-text text-5xl font-bold text-transparent'
 
   const content = (
     <div
@@ -200,12 +207,12 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
       ) : null}
       <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-start">
         <div>
-          <h3 className="text-2xl font-bold uppercase">{plan.title}</h3>
+          <h3 className="text-3xl font-bold uppercase">{plan.title}</h3>
           <p
             className={
               isAdvanced
-                ? 'mt-2 max-w-xs text-sm text-white/85'
-                : 'mt-2 max-w-xs text-sm text-[#4A5565]'
+                ? 'mt-2 max-w-xs text-base text-white/85'
+                : 'mt-2 max-w-xs text-base text-[#2F3B51]'
             }
           >
             {plan.description}
@@ -215,22 +222,20 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
           <p
             className={
               isAdvanced
-                ? 'text-xs font-bold uppercase text-white/80'
-                : 'text-xs font-bold uppercase text-[#4A5565]'
+                ? 'text-lg font-bold uppercase text-white/80'
+                : 'text-lg font-bold uppercase text-[#4A5565]'
             }
           >
             Starting from
           </p>
           <div className="mt-1 flex items-end gap-2">
-            <span className="mb-1 text-xs font-bold">AED</span>
+            <span className="mb-1 text-md font-bold">AED</span>
             <span
-              className={
-                isAdvanced ? 'text-4xl font-bold text-white' : 'text-4xl font-bold text-[#1498F5]'
-              }
+              className={priceClassName}
             >
               {plan.price}
             </span>
-            <span className="mb-1 text-xs font-bold">/month</span>
+            <span className="mb-1 text-md font-bold">/month</span>
           </div>
         </div>
       </div>
@@ -245,7 +250,7 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
                 className={
                   isAdvanced
                     ? 'mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-sm bg-white'
-                    : 'mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-sm bg-[#F4E8F8]'
+                    : 'mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-sm bg-[#F4E8F8] text-[#2F3B51]'
                 }
               >
                 <Image
@@ -256,7 +261,7 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
                   className="h-[18px] w-[18px] object-contain"
                 />
               </span>
-              <span>{feature.name}</span>
+              <span className="text-base">{feature.name}</span>
             </li>
           ))}
         </ul>
@@ -267,7 +272,7 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
                 className={
                   isAdvanced
                     ? 'mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-sm bg-white'
-                    : 'mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-sm bg-[#F4E8F8]'
+                    : 'mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-sm bg-[#F4E8F8] text-[#2F3B51]'
                 }
               >
                 <Image
@@ -278,31 +283,50 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
                   className="h-[18px] w-[18px] object-contain"
                 />
               </span>
-              <span>{feature.name}</span>
+              <span className="text-base">{feature.name}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="mt-auto pt-9">
+      <div className={'mt-8 h-px bg-white/20'} />
+
+      <div className="flex flex-wrap gap-4 pt-12">
         <Link
-          href="https://800-simplify.org/800-simplify/?focus=true"
-          className={
-            isAdvanced
-              ? 'inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-bold text-[#652D8E] shadow-[0_14px_30px_rgba(0,0,0,0.18)]'
-              : 'inline-flex items-center gap-2 rounded-full bg-[#82359A] px-7 py-3 text-sm font-bold text-white shadow-[0_14px_30px_rgba(101,45,142,0.25)]'
-          }
+          href="mailto:info@800-simplify.com"
+          className="inline-flex min-h-12 items-center justify-center gap-4 rounded-md bg-[linear-gradient(90deg,#B350B6,#64269C)] px-3 md:px-7 text-sm font-bold text-white shadow-xl shadow-black/15 transition hover:opacity-95 sm:min-w-[180px]"
         >
           Get Started
           <ArrowRight className="h-4 w-4" />
+        </Link>
+
+        <Link
+          href="https://wa.me/97145579552"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md bg-white px-3 md:px-7 text-sm font-bold text-[#2F3B51] shadow-xl shadow-black/10 transition hover:bg-white/95 sm:min-w-[180px]"
+        >
+          <FaWhatsapp className="h-6 w-6 text-[#25D366]" />
+          Chat with us
         </Link>
       </div>
     </div>
   )
 
   const image = (
-    <div className="relative min-h-[260px] overflow-hidden rounded-xl md:min-h-full">
-      <Image src={plan.image} alt={plan.imageAlt} fill className="object-cover" />
+    <div
+      className={
+        isFirstCard
+          ? 'relative min-h-[260px] overflow-hidden rounded-xl md:min-h-[420px]'
+          : 'relative min-h-[260px] overflow-hidden rounded-xl md:min-h-full'
+      }
+    >
+      <Image
+        src={plan.image}
+        alt={plan.imageAlt}
+        fill
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+      />
     </div>
   )
 
@@ -310,8 +334,10 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
     <article
       className={
         isAdvanced
-          ? 'grid gap-8 bg-[#82359A] p-6 md:min-h-[640px] md:grid-cols-[0.85fr_1.15fr] md:p-8'
-          : 'grid gap-8 bg-[#F7F7F8] p-6 md:min-h-[640px] md:grid-cols-[1.15fr_0.85fr] md:p-8'
+          ? 'group grid gap-8 bg-[#82359A] p-3 md:p-6 transition-transform duration-300 ease-out hover:scale-[1.015] md:min-h-[540px] md:grid-cols-[0.85fr_1.15fr] md:p-8'
+          : isFirstCard
+            ? 'group grid gap-8 bg-[#F7F7F8] p-3 md:p-6 transition-transform duration-300 ease-out hover:scale-[1.015] md:min-h-[460px] md:grid-cols-[1.15fr_0.85fr] md:p-8'
+            : 'group grid gap-8 bg-[#F7F7F8] p-3 md:p-6 transition-transform duration-300 ease-out hover:scale-[1.015] md:min-h-[540px] md:grid-cols-[1.15fr_0.85fr] md:p-8'
       }
     >
       {imageFirst ? image : content}
@@ -323,17 +349,19 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
 export default function AuditServicePage() {
   return (
     <main className="bg-white text-[#2F3B51]">
-      <HeroSwiper />
+      <Hero />
 
       <section className="package-section bg-white px-4 py-14 md:px-10 md:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold text-[#2F3B51] md:text-4xl" id="plans">
-              Built for every stage, structured to adapt.
+            <h2 className="text-3xl font-bold text-[#2F3B51] md:text-5xl" id="plans">
+              Financial service packages
+              <span className="text-[#E4763D] block">
+                built for every stage, structured to adapt.
+              </span>
             </h2>
-            <p className="mt-3 text-sm font-medium text-[#0C0C0C] md:text-base">
-              A curated financial toolkit that fits your pace today, ready to upgrade the moment
-              your operations grow.
+            <p className="mt-3 text-sm font-medium text-[#0C0C0C] md:text-lg">
+              Choose the level of financial oversight that matches your operations.
             </p>
           </div>
 
@@ -429,7 +457,8 @@ export default function AuditServicePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://800-simplify.org/800-simplify/?focus=true"
+                href="https://wa.me/97145579552"
+                target="_blank"
                 className="bg-[#FFFFFF] text-[#652D8E] px-8 py-3 rounded-[0.5rem] font-medium transition-all duration-200 inline-flex gap-4 items-center shadow-xl justify-center"
               >
                 <Calendar className="w-5 h-5" />
