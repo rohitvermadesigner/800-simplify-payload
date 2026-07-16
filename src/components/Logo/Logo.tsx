@@ -15,7 +15,7 @@ export const Logo = (props: Props) => {
 
   return (
     <img
-      alt="800 Simplify Logo"
+      alt="800-Simplify logo - Registered auditors in UAE"
       width={193}
       height={34}
       loading={loading}

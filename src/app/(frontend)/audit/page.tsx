@@ -8,6 +8,7 @@ import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
 import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
+import Script from 'next/dist/client/script'
 
 export const metadata: Metadata = {
   title: 'Auditing Services by Registered Auditors in UAE | 800-Simplify',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 const auditStack = [
   {
     title: 'External / Statutory Audit',
-    description: `An external audit is indicative of how seriously a company treats its financial reporting. Investors look at it
+    description: `An external audit is indicative of how seriously a company treats its financial reporting. Investors look at it 
 as a trust factor, so do banks and free zone authorities. Our approved auditors go through the numbers
 to deliver reports that hold up under scrutiny while operations continue running as usual.`,
   },
@@ -51,8 +52,7 @@ Businesses also get a better understanding of their financial position and repor
 const faqs = [
   {
     question: 'Why do I need an external auditor?',
-    answer: `External auditors review past financial records to trace where reporting gaps have emerged. This helps
-businesses pinpoint areas that need immediate attention before they affect future reporting cycles.`,
+    answer: `External auditors review past financial records to trace where reporting gaps have emerged. This helps businesses pinpoint areas that need immediate attention before they affect future reporting cycles.`,
   },
   {
     question: 'How does a compliance audit help my business?',
@@ -88,74 +88,92 @@ function ServiceCard({ title, description }: { title: string; description: strin
   )
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: answer,
+    },
+  })),
+}
+
 export default function AuditServicePage() {
   return (
-    <main className="bg-white text-[#2F3B51]">
-      <AuditHeroSwiper />
+    <>
+      <Script id="faq-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(faqSchema)}
+      </Script>
+      <main className="bg-white text-[#2F3B51]">
+        <AuditHeroSwiper />
 
-      <section className="relative overflow-hidden bg-[#E4763D]">
-        <div className="absolute -left-16 -top-16 h-36 w-36 rounded-br-[3rem] border-[28px] border-white/10" />
-        <div className="absolute -left-16 bottom-0 h-36 w-36 rounded-tr-[3rem] border-[28px] border-white/10" />
+        <section className="relative overflow-hidden bg-[#E4763D]">
+          <div className="absolute -left-16 -top-16 h-36 w-36 rounded-br-[3rem] border-[28px] border-white/10" />
+          <div className="absolute -left-16 bottom-0 h-36 w-36 rounded-tr-[3rem] border-[28px] border-white/10" />
 
-        <AboutSectionComponent
-          heading={`Expert solutions for stronger
+          <AboutSectionComponent
+            heading={`Expert solutions for stronger
              audit outcomes.`}
-          description={
-            <p>
-              Most businesses assume expertise in audit consultancy services come at higher costs
-              and added complexity. At 800-Simplify, that trade-off doesn’t apply. We close the gap
-              between quality and affordability. Our auditors in the UAE work with growing
-              businesses across mainland and free zones to deliver reliable audits without cutting
-              corners.
-            </p>
-          }
-          image={{
-            url: '/images/audit/audit.png',
-            alt: 'About',
-          }}
-          imageClassName={'w-[20rem] md:w-[30rem] 2xl:w-[30rem]'}
-        />
-      </section>
+            description={
+              <p>
+                Most businesses assume expertise in audit consultancy services come at higher costs
+                and added complexity. At 800-Simplify, that trade-off doesn’t apply. We close the
+                gap between quality and affordability. Our auditors in the UAE work with growing
+                businesses across mainland and free zones to deliver reliable audits without cutting
+                corners.
+              </p>
+            }
+            image={{
+              url: '/images/audit/audit.png',
+              alt: 'Auditors reviewing financial records UAE',
+            }}
+            imageClassName={'w-[20rem] md:w-[30rem] 2xl:w-[30rem]'}
+          />
+        </section>
 
-      <section className="bg-white px-6 py-14 md:px-10 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-center text-3xl font-bold text-[#2F3B51] md:text-4xl">
-            Audit services that anchor compliance.{' '}
-          </h2>
+        <section className="bg-white px-6 py-14 md:px-10 md:py-20">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-center text-3xl font-bold text-[#2F3B51] md:text-4xl">
+              Audit services that anchor compliance.{' '}
+            </h2>
 
-          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-[1fr_0.9fr_1fr]">
-            <ServiceCard {...auditStack[0]} />
-            <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
-              <Image
-                src="/images/audit/audit-service.png"
-                alt="Audit documents and financial records"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-[#652D8E]/10" />
+            <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-[1fr_0.9fr_1fr]">
+              <ServiceCard {...auditStack[0]} />
+              <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
+                <Image
+                  src="/images/audit/audit-service.png"
+                  alt="Corporate compliance audit services Dubai"
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-[#652D8E]/10" />
+              </div>
+
+              <ServiceCard {...auditStack[1]} />
+              <ServiceCard {...auditStack[2]} />
+              <ServiceCard {...auditStack[3]} />
+              <ServiceCard {...auditStack[4]} />
             </div>
-
-            <ServiceCard {...auditStack[1]} />
-            <ServiceCard {...auditStack[2]} />
-            <ServiceCard {...auditStack[3]} />
-            <ServiceCard {...auditStack[4]} />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <ServiceHightlightComponent
-        title="Audit solutions that meet UAE business needs."
-        para="From entrepreneurs trading in retail or pharma, to SMEs in F&B, travel and tourism, we address industry-
+        <ServiceHightlightComponent
+          title="Audit solutions that meet UAE business needs."
+          para="From entrepreneurs trading in retail or pharma, to SMEs in F&B, travel and tourism, we address industry-
 specific compliance bottlenecks through accurate audit processes. Businesses are equipped with reliable
 financial data for stronger decision-making."
-      />
+        />
 
-      <FAQBlock
-        heading="Just in case you were wondering..."
-        description="Find answers to common questions about our services."
-        items={faqs}
-      />
-      <StartBuildScale />
-    </main>
+        <FAQBlock
+          heading="Just in case you were wondering..."
+          description="Find answers to common questions about our services."
+          items={faqs}
+        />
+        <StartBuildScale />
+      </main>
+    </>
   )
 }

@@ -11,19 +11,19 @@ import 'swiper/css/pagination'
 const slides = [
   {
     src: '/images/audit/slide-1.png',
-    alt: 'Audit & Assurance',
+    alt: 'Approved sales auditors in UAE',
     title: 'Qualified Annual',
     titleSecondLine: 'Audit Report',
   },
   {
     src: '/images/audit/slide-2.png',
-    alt: 'Audit & Assurance',
+    alt: 'Sales audit report services UAE',
     title: 'Sales',
     titleSecondLine: 'Audit Report',
   },
   {
     src: '/images/audit/slide-3.png',
-    alt: 'Audit & Assurance',
+    alt: 'Auditor reviewing financial reports for management audit in Dubai',
     title: 'Management',
     titleSecondLine: 'Audit Report',
   },

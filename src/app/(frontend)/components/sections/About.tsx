@@ -72,7 +72,7 @@ while the Spends are light.`}
       }
       image={{
         url: '/images/about.png',
-        alt: 'About',
+        alt: 'Business consultants reviewing reports UAE',
       }}
       features={[
         {

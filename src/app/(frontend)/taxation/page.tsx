@@ -8,6 +8,7 @@ import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
 import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
+import Script from 'next/dist/client/script'
 
 export const metadata: Metadata = {
   title: 'Tax Services in UAE startups & SMEs| 800-Simplify',
@@ -88,74 +89,93 @@ function ServiceCard({ title, description }: { title: string; description: strin
   )
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: answer,
+    },
+  })),
+}
+
 export default function AuditServicePage() {
   return (
-    <main className="bg-white text-[#2F3B51]">
-      <AuditHeroSwiper />
+    <>
+      <Script id="faq-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(faqSchema)}
+      </Script>
+      <main className="bg-white text-[#2F3B51]">
+        <AuditHeroSwiper />
 
-      <section className="relative overflow-hidden bg-[#E4763D]">
-        <div className="absolute -left-16 -top-16 h-36 w-36 rounded-br-[3rem] border-[28px] border-white/10" />
-        <div className="absolute -left-16 bottom-0 h-36 w-36 rounded-tr-[3rem] border-[28px] border-white/10" />
+        <section className="relative overflow-hidden bg-[#E4763D]">
+          <div className="absolute -left-16 -top-16 h-36 w-36 rounded-br-[3rem] border-[28px] border-white/10" />
+          <div className="absolute -left-16 bottom-0 h-36 w-36 rounded-tr-[3rem] border-[28px] border-white/10" />
 
-        <AboutSectionComponent
-          heading={`Tax services in UAE that ensures
+          <AboutSectionComponent
+            heading={`Tax services in UAE that ensures
              reporting accuracy.`}
-          description={
-            <p>
-              There’s no place for errors in tax reporting. Inconsistent records and missed details
-              attract penalties and unwanted scrutiny. Structure and clarity, in turn, become the
-              key pillars of execution. At 800-Simplify, our transparent tax services help
-              businesses file accurately and maintain clearer visibility into their tax position.
-            </p>
-          }
-          image={{
-            url: '/images/taxation/taxation.png',
-            alt: 'About',
-          }}
-          imageClassName={'w-[20rem] md:w-[30rem] 2xl:w-[30rem]'}
-        />
-      </section>
+            description={
+              <p>
+                There’s no place for errors in tax reporting. Inconsistent records and missed
+                details attract penalties and unwanted scrutiny. Structure and clarity, in turn,
+                become the key pillars of execution. At 800-Simplify, our transparent tax services
+                help businesses file accurately and maintain clearer visibility into their tax
+                position.
+              </p>
+            }
+            image={{
+              url: '/images/taxation/taxation.png',
+              alt: 'Corporate tax services in UAE',
+            }}
+            imageClassName={'w-[20rem] md:w-[30rem] 2xl:w-[30rem]'}
+          />
+        </section>
 
-      <section className="bg-white px-6 py-14 md:px-10 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-center text-3xl font-bold text-[#2F3B51] md:text-4xl">
-            Tax solutions, tuned for businesses.
-          </h2>
+        <section className="bg-white px-6 py-14 md:px-10 md:py-20">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-center text-3xl font-bold text-[#2F3B51] md:text-4xl">
+              Tax solutions, tuned for businesses.
+            </h2>
 
-          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-[1fr_0.9fr_1fr]">
-            <ServiceCard {...taxationStack[0]} />
-            <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
-              <Image
-                src="/images/taxation/taxation-service.png"
-                alt="Audit documents and financial records"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-[#652D8E]/10" />
+            <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-[1fr_0.9fr_1fr]">
+              <ServiceCard {...taxationStack[0]} />
+              <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
+                <Image
+                  src="/images/taxation/taxation-service.png"
+                  alt="VAT registration services UAE"
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-[#652D8E]/10" />
+              </div>
+
+              <ServiceCard {...taxationStack[1]} />
+              <ServiceCard {...taxationStack[2]} />
+              <ServiceCard {...taxationStack[3]} />
+              <ServiceCard {...taxationStack[4]} />
             </div>
-
-            <ServiceCard {...taxationStack[1]} />
-            <ServiceCard {...taxationStack[2]} />
-            <ServiceCard {...taxationStack[3]} />
-            <ServiceCard {...taxationStack[4]} />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <ServiceHightlightComponent
-        title="Strategic tax advice for diverse business sectors."
-        para="From startups and SMEs in food & beverage and travel & tourism to entrepreneurs in retail and
+        <ServiceHightlightComponent
+          title="Strategic tax advice for diverse business sectors."
+          para="From startups and SMEs in food & beverage and travel & tourism to entrepreneurs in retail and
 pharma, every business faces unique tax compliance challenges. We work through that
 complexity with focused tax consulting and structured filings so businesses stay compliant and
 in control."
-      />
+        />
 
-      <FAQBlock
-        heading="Just in case you were wondering..."
-        description="Find answers to common questions about our services."
-        items={faqs}
-      />
-      <StartBuildScale />
-    </main>
+        <FAQBlock
+          heading="Just in case you were wondering..."
+          description="Find answers to common questions about our services."
+          items={faqs}
+        />
+        <StartBuildScale />
+      </main>
+    </>
   )
 }

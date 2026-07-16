@@ -8,6 +8,7 @@ import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
 import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
+import Script from 'next/dist/client/script'
 
 export const metadata: Metadata = {
   title: 'Accounting & Bookkeeping Services in UAE | 800-Simplify',
@@ -82,80 +83,98 @@ function ServiceCard({ title, description }: { title: string; description: strin
   )
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: answer,
+    },
+  })),
+}
+
 export default function AuditServicePage() {
   return (
-    <main className="bg-white text-[#2F3B51]">
-      <AuditHeroSwiper />
+    <>
+      <Script id="faq-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(faqSchema)}
+      </Script>
+      <main className="bg-white text-[#2F3B51]">
+        <AuditHeroSwiper />
 
-      <section className="relative overflow-hidden bg-[#E4763D]">
-        <div className="absolute -left-16 -top-16 h-36 w-36 rounded-br-[3rem] border-[28px] border-white/10" />
-        <div className="absolute -left-16 bottom-0 h-36 w-36 rounded-tr-[3rem] border-[28px] border-white/10" />
+        <section className="relative overflow-hidden bg-[#E4763D]">
+          <div className="absolute -left-16 -top-16 h-36 w-36 rounded-br-[3rem] border-[28px] border-white/10" />
+          <div className="absolute -left-16 bottom-0 h-36 w-36 rounded-tr-[3rem] border-[28px] border-white/10" />
 
-        <AboutSectionComponent
-          heading={`Finance done better with 
+          <AboutSectionComponent
+            heading={`Finance done better with 
             professional accounting 
             services.`}
-          description={
-            <p>
-              As businesses expand, daily transaction volumes increase rapidly. Many companies start
-              facing delayed reconciliations and reporting gaps that affect financial oversight. At
-              800-Simplify, we help businesses keep up with their accounting without adding
-              operational complexity. Our structured business accounting services in UAE keep
-              records accurate and review-ready at every stage of growth.
-            </p>
-          }
-          image={{
-            url: '/images/accounting/accounting.png',
-            alt: 'About',
-          }}
-          imageClassName={'w-[20rem] md:w-[30rem] 2xl:w-[30rem]'}
-        />
-      </section>
+            description={
+              <p>
+                As businesses expand, daily transaction volumes increase rapidly. Many companies
+                start facing delayed reconciliations and reporting gaps that affect financial
+                oversight. At 800-Simplify, we help businesses keep up with their accounting without
+                adding operational complexity. Our structured business accounting services in UAE
+                keep records accurate and review-ready at every stage of growth.
+              </p>
+            }
+            image={{
+              url: '/images/accounting/accounting.png',
+              alt: 'Accountant preparing corporate tax returns',
+            }}
+            imageClassName={'w-[20rem] md:w-[30rem] 2xl:w-[30rem]'}
+          />
+        </section>
 
-      <section className="bg-white px-6 py-14 md:px-10 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-center text-3xl font-bold text-[#2F3B51] md:text-4xl">
-            The complete accounting stack.
-          </h2>
+        <section className="bg-white px-6 py-14 md:px-10 md:py-20">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-center text-3xl font-bold text-[#2F3B51] md:text-4xl">
+              The complete accounting stack.
+            </h2>
 
-          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-[1fr_0.9fr_1fr]">
-            <div className="grid gap-4">
-              <ServiceCard {...accountingStack[0]} />
-              <ServiceCard {...accountingStack[1]} />
-            </div>
+            <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-[1fr_0.9fr_1fr]">
+              <div className="grid gap-4">
+                <ServiceCard {...accountingStack[0]} />
+                <ServiceCard {...accountingStack[1]} />
+              </div>
 
-            <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
-              <Image
-                src="/images/accounting/accounting-service.png"
-                alt="Audit documents and financial records"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-[#652D8E]/10" />
-            </div>
+              <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
+                <Image
+                  src="/images/accounting/accounting-service.png"
+                  alt="Reconciling business VAT records"
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-[#652D8E]/10" />
+              </div>
 
-            <div className="grid gap-4">
-              <ServiceCard {...accountingStack[2]} />
-              <ServiceCard {...accountingStack[3]} />
+              <div className="grid gap-4">
+                <ServiceCard {...accountingStack[2]} />
+                <ServiceCard {...accountingStack[3]} />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <ServiceHightlightComponent
-        title="Accounting solutions built for diverse business sectors in the UAE."
-        para="From retail and pharma to F&B, travel, and tourism, every business has different accounting
+        <ServiceHightlightComponent
+          title="Accounting solutions built for diverse business sectors in the UAE."
+          para="From retail and pharma to F&B, travel, and tourism, every business has different accounting
 needs based on scale and complexity. We support them through structured accounting
 processes, giving clearer financial visibility and improved reporting consistency for smoother
 operations."
-      />
+        />
 
-      <FAQBlock
-        heading="Just in case you were wondering..."
-        description="Find answers to common questions about our services."
-        items={faqs}
-      />
-      <StartBuildScale />
-    </main>
+        <FAQBlock
+          heading="Just in case you were wondering..."
+          description="Find answers to common questions about our services."
+          items={faqs}
+        />
+        <StartBuildScale />
+      </main>
+    </>
   )
 }

@@ -11,28 +11,28 @@ import 'swiper/css/pagination'
 const slides = [
   {
     src: '/images/taxation/slide-1.png',
-    alt: 'Audit & Assurance',
+    alt: 'Corporate tax filing services UAE',
     title: 'Corporate',
     titleSecondLine: 'Tax Filing',
     price: 'AED 499',
   },
   {
     src: '/images/taxation/slide-2.png',
-    alt: 'Audit & Assurance',
+    alt: 'VAT registration services UAE',
     title: 'VAT',
     titleSecondLine: 'Registration',
     price: 'AED 299',
   },
   {
     src: '/images/taxation/slide-3.png',
-    alt: 'Audit & Assurance',
+    alt: 'Corporate tax registration UAE',
     title: 'Corporate Tax',
     titleSecondLine: 'Registration',
     price: 'AED 399',
   },
   {
     src: '/images/taxation/slide-4.png',
-    alt: 'Audit & Assurance',
+    alt: 'VAT return filing services UAE',
     title: 'VAT Returns',
     titleSecondLine: 'Filing',
     price: 'AED 200/Qtr.',

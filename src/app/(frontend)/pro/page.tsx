@@ -8,6 +8,7 @@ import { AboutSectionComponent } from '@/blocks/AboutSection/Component'
 import { ServiceHightlightComponent } from '@/blocks/ServiceHightlight/Component'
 import { FAQBlock } from '@/blocks/FAQ/Component'
 import StartBuildScale from '../components/sections/StartBuildScale'
+import Script from 'next/dist/client/script'
 
 export const metadata: Metadata = {
   title: 'Affordable PRO Services UAE | Visa & License | 800-Simplify',
@@ -68,72 +69,91 @@ function ServiceCard({ title, description }: { title: string; description: strin
   )
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: answer,
+    },
+  })),
+}
+
 export default function AuditServicePage() {
   return (
-    <main className="bg-white text-[#2F3B51]">
-      <AuditHeroSwiper />
+    <>
+      <Script id="faq-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(faqSchema)}
+      </Script>
+      <main className="bg-white text-[#2F3B51]">
+        <AuditHeroSwiper />
 
-      <section className="relative overflow-hidden bg-[#E4763D]">
-        <div className="absolute -left-16 -top-16 h-36 w-36 rounded-br-[3rem] border-[28px] border-white/10" />
-        <div className="absolute -left-16 bottom-0 h-36 w-36 rounded-tr-[3rem] border-[28px] border-white/10" />
+        <section className="relative overflow-hidden bg-[#E4763D]">
+          <div className="absolute -left-16 -top-16 h-36 w-36 rounded-br-[3rem] border-[28px] border-white/10" />
+          <div className="absolute -left-16 bottom-0 h-36 w-36 rounded-tr-[3rem] border-[28px] border-white/10" />
 
-        <AboutSectionComponent
-          heading={`PRO services in UAE without
+          <AboutSectionComponent
+            heading={`PRO services in UAE without
              the premium.`}
-          description={
-            <p>
-              Businesses often manage PRO tasks in-house without accounting for the constant fees
-              and follow-ups involved at every stage. At 800-Simplify, our corporate PRO services in
-              the UAE handle visa processing and trade license documentation alongside authority
-              coordination, so operations stay on track without stretching operational costs.
-            </p>
-          }
-          image={{
-            url: '/images/pro/pro.png',
-            alt: 'About',
-          }}
-          imageClassName={'w-[20rem] md:w-[30rem] 2xl:w-[30rem]'}
-        />
-      </section>
+            description={
+              <p>
+                Businesses often manage PRO tasks in-house without accounting for the constant fees
+                and follow-ups involved at every stage. At 800-Simplify, our corporate PRO services
+                in the UAE handle visa processing and trade license documentation alongside
+                authority coordination, so operations stay on track without stretching operational
+                costs.
+              </p>
+            }
+            image={{
+              url: '/images/pro/pro.png',
+              alt: 'Reviewing business documents and trade licenses.',
+            }}
+            imageClassName={'w-[20rem] md:w-[30rem] 2xl:w-[30rem]'}
+          />
+        </section>
 
-      <section className="bg-white px-6 py-14 md:px-10 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-center text-3xl font-bold text-[#2F3B51] md:text-4xl">
-            Corporate workflows, thoroughly managed.{' '}
-          </h2>
+        <section className="bg-white px-6 py-14 md:px-10 md:py-20">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-center text-3xl font-bold text-[#2F3B51] md:text-4xl">
+              Corporate workflows, thoroughly managed.{' '}
+            </h2>
 
-          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
-              <Image
-                src="/images/pro/pro-service.png"
-                alt="Audit documents and financial records"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-[#652D8E]/10" />
-            </div>
+            <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="relative min-h-[360px] overflow-hidden bg-[#F8F3FC] md:min-h-full">
+                <Image
+                  src="/images/pro/pro-service.png"
+                  alt="Business consultants discussing UAE corporate PRO services."
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-[#652D8E]/10" />
+              </div>
 
-            <div className="grid gap-4">
-              <ServiceCard {...proStack[0]} />
-              <ServiceCard {...proStack[1]} />
+              <div className="grid gap-4">
+                <ServiceCard {...proStack[0]} />
+                <ServiceCard {...proStack[1]} />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <ServiceHightlightComponent
-        title="PRO solutions for UAE compliance requirements.."
-        para="As businesses expand and workforce requirements change, visa processing and trade license
+        <ServiceHightlightComponent
+          title="PRO solutions for UAE compliance requirements.."
+          para="As businesses expand and workforce requirements change, visa processing and trade license
 compliance require closer attention. From entrepreneurs to SMEs across retail, F&B, pharma,
 and travel sectors in the UAE, our PRO support team keeps documentation and authority coordination aligned so operations are not slowed down by compliance dependencies."
-      />
+        />
 
-      <FAQBlock
-        heading="Just in case you were wondering..."
-        description="Find answers to common questions about our services."
-        items={faqs}
-      />
-      <StartBuildScale />
-    </main>
+        <FAQBlock
+          heading="Just in case you were wondering..."
+          description="Find answers to common questions about our services."
+          items={faqs}
+        />
+        <StartBuildScale />
+      </main>
+    </>
   )
 }

@@ -11,21 +11,21 @@ import 'swiper/css/pagination'
 const slides = [
   {
     src: '/images/pro/slide-1.png',
-    alt: 'Audit & Assurance',
+    alt: 'Visa application services UAE',
     title: 'Visa',
     titleSecondLine: 'Application',
     price: 'AED 299',
   },
   {
     src: '/images/pro/slide-2.png',
-    alt: 'Audit & Assurance',
+    alt: 'Trade license amendment UAE',
     title: 'License',
     titleSecondLine: 'Amendment',
     price: 'AED 499',
   },
   {
     src: '/images/pro/slide-3.png',
-    alt: 'Audit & Assurance',
+    alt: 'Visa cancellation services UAE',
     title: 'Visa',
     titleSecondLine: 'Cancellation',
     price: 'AED 299',

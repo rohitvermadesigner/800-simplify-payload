@@ -172,7 +172,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                       src="/images/logo.svg"
                       width={180}
                       height={0}
-                      alt="800 Simplify"
+                      alt="800-Simplify logo - Registered auditors in UAE"
                       className="h-auto w-[180px]"
                     />
                   </a>

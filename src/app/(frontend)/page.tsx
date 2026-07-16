@@ -6,6 +6,7 @@ import ServiceSection from './components/sections/Services.'
 import Package from './components/sections/Package'
 import StartBuildScale from './components/sections/StartBuildScale'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { FAQBlock } from '@/blocks/FAQ/Component'
 
 export const metadata: Metadata = {
@@ -34,9 +35,25 @@ const homeFAQs = [
   },
 ]
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFAQs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: answer,
+    },
+  })),
+}
+
 export default function Home() {
   return (
     <>
+      <Script id="faq-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(faqSchema)}
+      </Script>
       <Hero />
       <About />
       <ServiceSection />

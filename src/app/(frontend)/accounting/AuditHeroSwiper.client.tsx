@@ -11,14 +11,14 @@ import 'swiper/css/pagination'
 const slides = [
   {
     src: '/images/accounting/slide-1.png',
-    alt: 'Audit & Assurance',
+    alt: 'Monthly bookkeeping services UAE',
     title: 'Regular Monthly',
     titleSecondLine: 'Accounting',
     price: 'AED 200',
   },
   {
     src: '/images/accounting/slide-2.png',
-    alt: 'Audit & Assurance',
+    alt: 'Annual accounting services UAE',
     title: 'Annual ',
     titleSecondLine: 'Accounting',
     price: 'AED 500',
