@@ -182,15 +182,17 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
   const imageFirst = index === 1
   const isFirstCard = index === 0
   const priceClassName = isAdvanced
-    ? 'text-5xl font-bold text-white'
+    ? 'text-4xl md:text-5xl font-bold text-white'
     : plan.title === 'Elite Package'
-      ? 'bg-[linear-gradient(90deg,#4F39F6,#155DFC)] bg-clip-text text-5xl font-bold text-transparent'
-      : 'bg-[linear-gradient(90deg,#2B7FFF,#00B8DB)] bg-clip-text text-5xl font-bold text-transparent'
+      ? 'bg-[linear-gradient(90deg,#4F39F6,#155DFC)] bg-clip-text text-4xl md:text-5xl font-bold text-transparent'
+      : 'bg-[linear-gradient(90deg,#2B7FFF,#00B8DB)] bg-clip-text text-4xl md:text-5xl font-bold text-transparent'
 
   const content = (
     <div
       className={
-        isAdvanced ? 'flex h-full flex-col text-white' : 'flex h-full flex-col text-[#25324A]'
+        isAdvanced
+          ? 'order-2 flex h-full flex-col text-white md:order-none'
+          : 'order-2 flex h-full flex-col text-[#25324A] md:order-none'
       }
     >
       {plan.popular ? (
@@ -207,7 +209,7 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
       ) : null}
       <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-start">
         <div>
-          <h3 className="text-3xl font-bold uppercase">{plan.title}</h3>
+          <h3 className="text-2xl md:text-3xl font-bold uppercase">{plan.title}</h3>
           <p
             className={
               isAdvanced
@@ -222,19 +224,15 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
           <p
             className={
               isAdvanced
-                ? 'text-lg font-bold uppercase text-white/80'
-                : 'text-lg font-bold uppercase text-[#4A5565]'
+                ? 'text-base md:text-lg font-bold uppercase text-white/80'
+                : 'text-base md:text-lg font-bold uppercase text-[#4A5565]'
             }
           >
             Starting from
           </p>
           <div className="mt-1 flex items-end gap-2">
             <span className="mb-1 text-md font-bold">AED</span>
-            <span
-              className={priceClassName}
-            >
-              {plan.price}
-            </span>
+            <span className={priceClassName}>{plan.price}</span>
             <span className="mb-1 text-md font-bold">/month</span>
           </div>
         </div>
@@ -291,10 +289,11 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
 
       <div className={'mt-8 h-px bg-white/20'} />
 
-      <div className="flex flex-wrap gap-4 pt-12">
+      <div className="flex flex-wrap gap-4 pt-4 md:pt-12">
         <Link
           href="mailto:info@800-simplify.com"
           className="inline-flex min-h-12 items-center justify-center gap-4 rounded-md bg-[linear-gradient(90deg,#B350B6,#64269C)] px-3 md:px-7 text-sm font-bold text-white shadow-xl shadow-black/15 transition hover:opacity-95 sm:min-w-[180px]"
+          id="getStartedHero"
         >
           Get Started
           <ArrowRight className="h-4 w-4" />
@@ -305,6 +304,7 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md bg-white px-3 md:px-7 text-sm font-bold text-[#2F3B51] shadow-xl shadow-black/10 transition hover:bg-white/95 sm:min-w-[180px]"
+          id="chatWithUsHero"
         >
           <FaWhatsapp className="h-6 w-6 text-[#25D366]" />
           Chat with us
@@ -317,8 +317,8 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
     <div
       className={
         isFirstCard
-          ? 'relative min-h-[260px] overflow-hidden rounded-xl md:min-h-[420px]'
-          : 'relative min-h-[260px] overflow-hidden rounded-xl md:min-h-full'
+          ? 'order-1 relative min-h-[260px] overflow-hidden rounded-xl md:order-none md:min-h-[420px] hidden md:block'
+          : 'order-1 relative min-h-[260px] overflow-hidden rounded-xl md:order-none md:min-h-full hidden md:block'
       }
     >
       <Image
@@ -336,8 +336,8 @@ function PackageCard({ plan, index }: { plan: PackagePlan; index: number }) {
         isAdvanced
           ? 'group grid gap-8 bg-[#82359A] p-3 md:p-6 transition-transform duration-300 ease-out hover:scale-[1.015] md:min-h-[540px] md:grid-cols-[0.85fr_1.15fr] md:p-8'
           : isFirstCard
-            ? 'group grid gap-8 bg-[#F7F7F8] p-3 md:p-6 transition-transform duration-300 ease-out hover:scale-[1.015] md:min-h-[460px] md:grid-cols-[1.15fr_0.85fr] md:p-8'
-            : 'group grid gap-8 bg-[#F7F7F8] p-3 md:p-6 transition-transform duration-300 ease-out hover:scale-[1.015] md:min-h-[540px] md:grid-cols-[1.15fr_0.85fr] md:p-8'
+            ? 'group grid gap-4 md:gap-8 bg-[#F7F7F8] p-3 md:p-6 transition-transform duration-300 ease-out hover:scale-[1.015] md:min-h-[460px] md:grid-cols-[1.15fr_0.85fr] md:p-8'
+            : 'group grid gap-4 md:gap-8 bg-[#F7F7F8] p-3 md:p-6 transition-transform duration-300 ease-out hover:scale-[1.015] md:min-h-[540px] md:grid-cols-[1.15fr_0.85fr] md:p-8'
       }
     >
       {imageFirst ? image : content}
@@ -383,7 +383,9 @@ export default function AuditServicePage() {
               800-Simplify is the finance buddy you call when things get real. We understand that
               building and running a business requires significant investment. That's why we work
               with a service model that fits your business, placing the right structures and
-              maintaining audit-ready books.
+              maintaining audit-ready books. Our audit, tax, PRO, monthly accounting, and
+              bookkeeping service packages lift the weight off your shoulders so you can focus on
+              your vision, people, and operations.
             </p>
           }
           image={{
@@ -460,6 +462,7 @@ export default function AuditServicePage() {
                 href="https://wa.me/97145579552"
                 target="_blank"
                 className="bg-[#FFFFFF] text-[#652D8E] px-8 py-3 rounded-[0.5rem] font-medium transition-all duration-200 inline-flex gap-4 items-center shadow-xl justify-center"
+                id="getStartedCta"
               >
                 <Calendar className="w-5 h-5" />
                 Get started

@@ -258,7 +258,8 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
               <Link
                 href="https://wa.me/97145579552"
                 target="_blank"
-                className="bg-[#652D8E] text-[#ffffff] py-3 px-5 rounded-lg ml-0 md:ml-24 drop-shadow-[2px_4px_10px_#AD46FF4D]"
+                className="bg-[linear-gradient(90deg,#B350B6,#64269C)] text-[#ffffff] py-3 px-5 rounded-lg ml-0 md:ml-24 drop-shadow-[2px_4px_10px_#AD46FF4D]"
+                id="getFreeConsultation"
               >
                 Get Free Consultation
               </Link>

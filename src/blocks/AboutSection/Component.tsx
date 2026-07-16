@@ -79,7 +79,7 @@ export const AboutSectionComponent = ({
       />
 
       <div className="mx-auto w-full max-w-7xl py-8 pb-88 md:py-16 md:pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.8fr] gap-8 items-center px-4">
+        <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.8fr] gap-8 items-center px-4 md:px-0">
           <div>
             <span className="uppercase text-xl md:text-2xl font-semibold text-[var(--purple)]">
               {eyebrow}
